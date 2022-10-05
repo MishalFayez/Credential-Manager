@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_credential_manager,access.credential.manager,model_credential_manager,credential_manager.group_manager,1,1,1,1
+access_credential_manager_followers,access.credential.manager.followers,model_credential_manager,credential_manager.group_followers,1,1,0,0

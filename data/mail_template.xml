@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="notify_email_template" model="mail.template">
+            <field name="name">Notify: Send by email</field>
+            <field name="model_id" ref="credential_manager.model_credential_manager"/>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="partner_to"></field>
+            <field name="subject">Invitation to follow Credential</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <h1>Credential Manager</h1>
+                    <p style="margin: 0px; padding: 0px; font-size: 18px;">
+                        You registered as a follower to: ${object.name}
+                        Please check Credential Manager application
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+    <data>
+        <record id="info_email_template" model="mail.template">
+            <field name="name">Info: Send by email</field>
+            <field name="model_id" ref="credential_manager.model_credential_manager"/>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="email_to"></field>
+            <field name="subject">Account Information</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <h1>Welcome</h1>
+                    <p style="margin: 0px; padding: 0px; font-size: 18px;">
+                        Thank you for signing in!
+
+                        Your Username: ${object.email} Your password: ${object.passwords}
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
